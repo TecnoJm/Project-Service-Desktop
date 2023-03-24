@@ -15,3 +15,4 @@ C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilSer
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.exe
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.pdb
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmCustomer.resources
+C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmListOilService.resources

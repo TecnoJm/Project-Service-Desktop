@@ -32,30 +32,12 @@ namespace OilProyectDesktop
         }
 
         //Void Events
-        void ClearTextBox()
-        {
-            txtCarPlate.Clear();
-            txtCustomerName.Clear();
-            txtCustomerPhone.Clear();
-            txtOilGrade.Clear();
-            txtMiles.Clear();
-            txtChangeMiles.Clear();
-            txtNextChangeDate.Clear();
-        }
-
         //#####################################################################//
 
-        private void frmOilService_Load(object sender, EventArgs e)
+        void InsertData()
         {
-            txtCustomerName.Enabled = false;
-            txtCustomerPhone.Enabled = false;
-        }
-
-        private void btnRecord_Click(object sender, EventArgs e)
-        {
-
-          try
-          {
+            try
+            {
                 SqlConnection con = new SqlConnection(connStr);
                 SqlCommand cmd;
 
@@ -87,17 +69,12 @@ namespace OilProyectDesktop
                 { MessageBox.Show("Error!"); }
 
                 con.Close();
-          } 
-          catch(Exception ex)           
-          { MessageBox.Show(ex.ToString());}
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.ToString()); }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearTextBox();
-        }
-
-        private void txtCarPlate_TextChanged(object sender, EventArgs e)
+        void SearchCustomerPlate()
         {
             try
             {
@@ -133,6 +110,41 @@ namespace OilProyectDesktop
             {
                 ClearTextBox();
             }
+        }
+
+        void ClearTextBox()
+        {
+            txtCarPlate.Clear();
+            txtCustomerName.Clear();
+            txtCustomerPhone.Clear();
+            txtOilGrade.Clear();
+            txtMiles.Clear();
+            txtChangeMiles.Clear();
+            txtNextChangeDate.Clear();
+        }
+
+        //#####################################################################//
+
+        private void frmOilService_Load(object sender, EventArgs e)
+        {
+            txtCustomerName.Enabled = false;
+            txtCustomerPhone.Enabled = false;
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            InsertData();
+            ClearTextBox();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+
+        private void txtCarPlate_TextChanged(object sender, EventArgs e)
+        {
+            SearchCustomerPlate();
         }
 
         private void cbxOilType_SelectedIndexChanged(object sender, EventArgs e)

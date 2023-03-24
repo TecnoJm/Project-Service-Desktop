@@ -86,9 +86,8 @@ namespace OilProyectDesktop
             this.lblRowCounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRowCounts.Location = new System.Drawing.Point(12, 166);
             this.lblRowCounts.Name = "lblRowCounts";
-            this.lblRowCounts.Size = new System.Drawing.Size(26, 29);
+            this.lblRowCounts.Size = new System.Drawing.Size(0, 29);
             this.lblRowCounts.TabIndex = 7;
-            this.lblRowCounts.Text = "L";
             // 
             // btnSearch
             // 
@@ -119,7 +118,7 @@ namespace OilProyectDesktop
             this.Controls.Add(this.dgvCustomers);
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customer";
+            this.Text = "Customer List";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);

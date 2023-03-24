@@ -13,14 +13,16 @@ using System.Data.SqlClient;
 
 namespace OilProyectDesktop
 {
-    public partial class frmCustomer : MaterialForm
+    public partial class frmListOilService : MaterialForm
     {
+
         string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
 
         //Create Material Skin Forms options
-        public frmCustomer()
+        public frmListOilService()
         {
             InitializeComponent();
+
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
             var skinManager = MaterialSkinManager.Instance;
@@ -42,7 +44,7 @@ namespace OilProyectDesktop
 
             con.Open();
 
-            cmd = new SqlCommand("spListCustomer", con);
+            cmd = new SqlCommand("spListOilService", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
 
@@ -66,7 +68,7 @@ namespace OilProyectDesktop
             con.Open();
 
             //Create filter with cbxSearchBy combobox and data from Customer table
-            cmd = new SqlCommand("spSearchCustomer", con);
+            cmd = new SqlCommand("spSearchOilService", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@prmSearchBy", cbxSearchBy.Text);
             cmd.Parameters.AddWithValue("@prmValue", txtSearch.Text);
@@ -81,10 +83,10 @@ namespace OilProyectDesktop
 
             con.Close();
         }
-        
+
         //#####################################################################//
 
-        private void frmCustomer_Load(object sender, EventArgs e)
+        private void frmListOilService_Load(object sender, EventArgs e)
         {
             GetData();
         }
