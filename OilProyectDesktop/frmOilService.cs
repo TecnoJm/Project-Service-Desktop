@@ -43,12 +43,13 @@ namespace OilProyectDesktop
             txtNextChangeDate.Clear();
         }
 
+        //#####################################################################//
+
         private void frmOilService_Load(object sender, EventArgs e)
         {
-
+            txtCustomerName.Enabled = false;
+            txtCustomerPhone.Enabled = false;
         }
-
-        //#####################################################################//
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
@@ -177,7 +178,7 @@ namespace OilProyectDesktop
                 DateTime newDate = nextMonth.AddMonths(5);
                 txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
 
-                //Calculate Next Change Miles
+                //Calculate Next Change Miless
                 txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
             }
         }

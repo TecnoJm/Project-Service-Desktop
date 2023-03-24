@@ -14,3 +14,4 @@ C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilSer
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilServiceProjectDesktop.csproj.CopyComplete
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.exe
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.pdb
+C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmCustomer.resources

@@ -157,7 +157,7 @@ namespace OilProyectDesktop
             this.btnRecord.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRecord.Depth = 0;
             this.btnRecord.Icon = null;
-            this.btnRecord.Location = new System.Drawing.Point(565, 715);
+            this.btnRecord.Location = new System.Drawing.Point(580, 715);
             this.btnRecord.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Primary = true;
@@ -185,7 +185,8 @@ namespace OilProyectDesktop
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(539, 123);
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Location = new System.Drawing.Point(545, 123);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 568);
             this.panel1.TabIndex = 19;
