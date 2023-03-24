@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Collections.Generic;
@@ -30,10 +30,10 @@ namespace OilProyectDesktop
             skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
         }
 
+        //Void methods
         //#####################################################################//
 
-        //Login 
-        private void btnLogin_Click(object sender, EventArgs e)
+        void LogIn()
         {
             //Local Variables for SQL Local Connection
             SqlConnection connection;
@@ -66,6 +66,14 @@ namespace OilProyectDesktop
             }
 
             connection.Close();
+        }
+
+        //#####################################################################//
+
+        //Login 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LogIn();
         }
     }
 }
