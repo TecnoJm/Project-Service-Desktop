@@ -157,7 +157,7 @@ namespace OilProyectDesktop
             this.btnRecord.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRecord.Depth = 0;
             this.btnRecord.Icon = null;
-            this.btnRecord.Location = new System.Drawing.Point(781, 715);
+            this.btnRecord.Location = new System.Drawing.Point(565, 715);
             this.btnRecord.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Primary = true;
@@ -173,7 +173,7 @@ namespace OilProyectDesktop
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClear.Depth = 0;
             this.btnClear.Icon = null;
-            this.btnClear.Location = new System.Drawing.Point(215, 715);
+            this.btnClear.Location = new System.Drawing.Point(445, 715);
             this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
             this.btnClear.Primary = true;
@@ -246,7 +246,7 @@ namespace OilProyectDesktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1161, 795);
+            this.ClientSize = new System.Drawing.Size(1161, 771);
             this.Controls.Add(this.cbxOilType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNextChangeDate);

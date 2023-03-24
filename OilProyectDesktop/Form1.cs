@@ -36,9 +36,9 @@ namespace OilProyectDesktop
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Local Variables for SQL Local Connection
-            SqlConnection connection = null;
-            SqlCommand cmd = null;
-            SqlDataReader dr = null;
+            SqlConnection connection;
+            SqlCommand cmd;
+            SqlDataReader dr;
 
             connection = new SqlConnection(connStr);
             cmd = new SqlCommand("spLogIn", connection);

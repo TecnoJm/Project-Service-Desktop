@@ -52,29 +52,43 @@ namespace OilProyectDesktop
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(connStr);
-            SqlCommand cmd = null;
 
-            cmd = new SqlCommand("spRecordOilService", con);
-            cmd.CommandType = CommandType.StoredProcedure;
+          try
+          {
+                SqlConnection con = new SqlConnection(connStr);
+                SqlCommand cmd;
 
-            //Parameters (Data from Text Box)
-            cmd.Parameters.AddWithValue("@prmCustomerPlate", txtCarPlate.Text);
-            cmd.Parameters.AddWithValue("@prmCustomerName", txtCustomerName.Text);
-            cmd.Parameters.AddWithValue("@prmCustomerPhone", txtCustomerPhone.Text);
-            cmd.Parameters.AddWithValue("@prmGrade", txtOilGrade.Text);
-            cmd.Parameters.AddWithValue("@prmMiles", txtMiles.Text);
-            cmd.Parameters.AddWithValue("@prmOilType", cbxOilType.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@prmChangeMiles", txtChangeMiles.Text);
-            cmd.Parameters.AddWithValue("@prmTodayDate", DateTime.Now);
-            cmd.Parameters.AddWithValue("@prmChangeDate", txtNextChangeDate.Text);
-            con.Open();
+                cmd = new SqlCommand("spRecordOilService", con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            int rows = cmd.ExecuteNonQuery();
-            if (rows > 0) MessageBox.Show("Oil Service Added!");
-            else MessageBox.Show("Error!");
+                //Parameters (Data from Text Box)
+                cmd.Parameters.AddWithValue("@prmCustomerPlate", txtCarPlate.Text);
+                cmd.Parameters.AddWithValue("@prmCustomerName", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@prmCustomerPhone", txtCustomerPhone.Text);
+                cmd.Parameters.AddWithValue("@prmGrade", txtOilGrade.Text);
+                cmd.Parameters.AddWithValue("@prmMiles", txtMiles.Text);
+                cmd.Parameters.AddWithValue("@prmOilType", cbxOilType.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@prmChangeMiles", txtChangeMiles.Text);
+                cmd.Parameters.AddWithValue("@prmTodayDate", DateTime.Now);
 
-            con.Close();
+                //Change date format for SQL to recognize the information.
+                txtNextChangeDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                cmd.Parameters.AddWithValue("@prmChangeDate", txtNextChangeDate.Text);
+                con.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    MessageBox.Show("Oil Service Added!");
+                    ClearTextBox();
+                }
+                else
+                { MessageBox.Show("Error!"); }
+
+                con.Close();
+          } 
+          catch(Exception ex)           
+          { MessageBox.Show(ex.ToString());}
         }
 
         private void btnClear_Click(object sender, EventArgs e)

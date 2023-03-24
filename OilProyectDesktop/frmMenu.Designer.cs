@@ -34,6 +34,7 @@ namespace OilProyectDesktop
             this.btnListOilServices = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnOilService = new System.Windows.Forms.Button();
+            this.pnlMainFrame = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,14 +46,14 @@ namespace OilProyectDesktop
             this.panel1.Controls.Add(this.btnCustomers);
             this.panel1.Controls.Add(this.btnOilService);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 979);
+            this.panel1.Location = new System.Drawing.Point(0, 956);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1942, 122);
+            this.panel1.Size = new System.Drawing.Size(1823, 122);
             this.panel1.TabIndex = 0;
             // 
             // btnListCustomers
             // 
-            this.btnListCustomers.Location = new System.Drawing.Point(1504, 18);
+            this.btnListCustomers.Location = new System.Drawing.Point(1498, 18);
             this.btnListCustomers.Name = "btnListCustomers";
             this.btnListCustomers.Size = new System.Drawing.Size(204, 89);
             this.btnListCustomers.TabIndex = 3;
@@ -61,7 +62,7 @@ namespace OilProyectDesktop
             // 
             // btnListOilServices
             // 
-            this.btnListOilServices.Location = new System.Drawing.Point(582, 18);
+            this.btnListOilServices.Location = new System.Drawing.Point(562, 18);
             this.btnListOilServices.Name = "btnListOilServices";
             this.btnListOilServices.Size = new System.Drawing.Size(204, 89);
             this.btnListOilServices.TabIndex = 2;
@@ -70,7 +71,7 @@ namespace OilProyectDesktop
             // 
             // btnCustomers
             // 
-            this.btnCustomers.Location = new System.Drawing.Point(1026, 18);
+            this.btnCustomers.Location = new System.Drawing.Point(1054, 18);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(204, 89);
             this.btnCustomers.TabIndex = 1;
@@ -79,7 +80,7 @@ namespace OilProyectDesktop
             // 
             // btnOilService
             // 
-            this.btnOilService.Location = new System.Drawing.Point(145, 18);
+            this.btnOilService.Location = new System.Drawing.Point(101, 21);
             this.btnOilService.Name = "btnOilService";
             this.btnOilService.Size = new System.Drawing.Size(204, 89);
             this.btnOilService.TabIndex = 0;
@@ -87,14 +88,24 @@ namespace OilProyectDesktop
             this.btnOilService.UseVisualStyleBackColor = true;
             this.btnOilService.Click += new System.EventHandler(this.btnOilService_Click);
             // 
+            // pnlMainFrame
+            // 
+            this.pnlMainFrame.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlMainFrame.Location = new System.Drawing.Point(0, 64);
+            this.pnlMainFrame.Name = "pnlMainFrame";
+            this.pnlMainFrame.Size = new System.Drawing.Size(1823, 892);
+            this.pnlMainFrame.TabIndex = 1;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1942, 1101);
+            this.ClientSize = new System.Drawing.Size(1823, 1078);
+            this.Controls.Add(this.pnlMainFrame);
             this.Controls.Add(this.panel1);
             this.Name = "frmMenu";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.TopMost = true;
@@ -112,5 +123,6 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Button btnListOilServices;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnOilService;
+        private System.Windows.Forms.Panel pnlMainFrame;
     }
 }

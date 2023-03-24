@@ -39,7 +39,7 @@ namespace OilProyectDesktop
         private void btnOilService_Click(object sender, EventArgs e)
         {
             frmOilService frmOilService = new frmOilService() { TopLevel = false, TopMost = true };
-            this.Controls.Add(frmOilService);
+            this.pnlMainFrame.Controls.Add(frmOilService);
             frmOilService.Show();
         }
     }
