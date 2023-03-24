@@ -27,5 +27,20 @@ namespace OilProyectDesktop
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //Form Buttons
+        //#####################################################################//
+
+        private void btnOilService_Click(object sender, EventArgs e)
+        {
+            frmOilService frmOilService = new frmOilService() { TopLevel = false, TopMost = true };
+            this.Controls.Add(frmOilService);
+            frmOilService.Show();
+        }
     }
 }

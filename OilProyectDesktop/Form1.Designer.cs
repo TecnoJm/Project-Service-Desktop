@@ -57,21 +57,21 @@ namespace OilProyectDesktop
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(126, 151);
+            this.label1.Location = new System.Drawing.Point(149, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 29);
+            this.label1.Size = new System.Drawing.Size(73, 29);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario:";
+            this.label1.Text = "User:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 242);
+            this.label2.Location = new System.Drawing.Point(91, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 29);
+            this.label2.Size = new System.Drawing.Size(131, 29);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña:";
+            this.label2.Text = "Password:";
             // 
             // btnLogin
             // 
@@ -100,7 +100,8 @@ namespace OilProyectDesktop
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Name = "frmLogin";
-            this.Text = "Pantalla de Ingreso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Log In";
             this.ResumeLayout(false);
             this.PerformLayout();
 

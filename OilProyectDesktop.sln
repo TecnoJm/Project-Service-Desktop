@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilProyectDesktop", "OilProyectDesktop\OilProyectDesktop.csproj", "{9EC71736-F319-4387-9F22-D99D276EF5B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilServiceProjectDesktop", "OilProyectDesktop\OilServiceProjectDesktop.csproj", "{9EC71736-F319-4387-9F22-D99D276EF5B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
