@@ -42,17 +42,18 @@ namespace OilProyectDesktop
             SqlDataReader dr;
             DataTable dt = new DataTable();
 
-            cmd = new SqlCommand("spListCustomer", con);
-            cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
 
+            cmd = new SqlCommand("spListCustomer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
+
             da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvCustomers.DataSource = dt;
 
             //Row counts from Customer Table by SQL Transaction
-            lblRowCounts.Text = (dgvCustomers.Rows.Count).ToString() +  " Records Found";
+            lblRowCounts.Text = (dgvCustomers.Rows.Count - 1).ToString() +  " Records Found";
 
             con.Close();
         }
@@ -65,15 +66,21 @@ namespace OilProyectDesktop
             DataTable dt = new DataTable();
 
             con.Open();
+            
+            //Create filter with cbxSearchBy combobox and data from Customer table
             cmd = new SqlCommand("spSearchCustomer", con);
             cmd.CommandType = CommandType.StoredProcedure;
-
             cmd.Parameters.AddWithValue("@prmSearchBy", cbxSearchBy.Text);
             cmd.Parameters.AddWithValue("@prmValue", txtSearch.Text);
             cmd.ExecuteNonQuery();
+
             da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvCustomers.DataSource = dt;
+
+            //Row counts from Customer Table by SQL Transaction
+            lblRowCounts.Text = (dgvCustomers.Rows.Count - 1).ToString() + " Records Found";
+
             con.Close();
         }
     }
