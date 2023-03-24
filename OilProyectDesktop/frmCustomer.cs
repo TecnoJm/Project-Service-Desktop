@@ -37,27 +37,19 @@ namespace OilProyectDesktop
 
             //Fill dgvCustomers Datatable with Customer Table
             SqlConnection con = new SqlConnection(connStr);
+            SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand cmd;
             SqlDataReader dr;
+            DataTable dt = new DataTable();
 
             cmd = new SqlCommand("spListCustomer", con);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
 
-            dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    dgvCustomers.Rows.Add(
-                        dr["Plate"].ToString(),
-                        dr["CustomerName"].ToString(),
-                        dr["Phone"].ToString(),
-                        dr["Email"].ToString()
-                        );
-                }
-            }
+            cmd.ExecuteNonQuery();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvCustomers.DataSource = dt;
 
             //Row counts from Customer Table by SQL Transaction
             lblRowCounts.Text = (dgvCustomers.Rows.Count).ToString() +  " Records Found";
@@ -67,31 +59,22 @@ namespace OilProyectDesktop
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-                SqlConnection con = new SqlConnection(connStr);
-                SqlCommand cmd;
-                SqlDataReader dr;
+            SqlConnection con = new SqlConnection(connStr);
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd;
+            DataTable dt = new DataTable();
 
-                cmd = new SqlCommand("spSearchCustomer", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd = new SqlCommand("spSearchCustomer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@prmSearchBy", cbxSearchBy.Text);
-                cmd.Parameters.AddWithValue("@prmValue", txtSearch.Text);
-                con.Open();
-
-                dr = cmd.ExecuteReader();
-
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        dgvCustomers.Rows.Add(
-                            dr["Plate"].ToString(),
-                            dr["CustomerName"].ToString(),
-                            dr["Phone"].ToString(),
-                            dr["Email"].ToString()
-                            );
-                    }
-                }            
+            cmd.Parameters.AddWithValue("@prmSearchBy", cbxSearchBy.Text);
+            cmd.Parameters.AddWithValue("@prmValue", txtSearch.Text);
+            cmd.ExecuteNonQuery();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvCustomers.DataSource = dt;
+            con.Close();
         }
     }
 }

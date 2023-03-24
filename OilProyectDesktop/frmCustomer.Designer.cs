@@ -34,10 +34,6 @@ namespace OilProyectDesktop
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblRowCounts = new System.Windows.Forms.Label();
-            this.Plate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
@@ -45,11 +41,6 @@ namespace OilProyectDesktop
             // dgvCustomers
             // 
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Plate,
-            this.Customer,
-            this.Phone,
-            this.Email});
             this.dgvCustomers.Location = new System.Drawing.Point(12, 198);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
@@ -62,13 +53,10 @@ namespace OilProyectDesktop
             this.cbxSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSearchBy.FormattingEnabled = true;
             this.cbxSearchBy.Items.AddRange(new object[] {
-            "Customer Plate",
-            "Customer Name",
-            "Customer Phone",
-            "Oil Type",
-            "Miles",
-            "Date",
-            "Next Change Date"});
+            "Plate",
+            "Name",
+            "Phone",
+            "Email"});
             this.cbxSearchBy.Location = new System.Drawing.Point(206, 110);
             this.cbxSearchBy.Name = "cbxSearchBy";
             this.cbxSearchBy.Size = new System.Drawing.Size(296, 33);
@@ -101,34 +89,6 @@ namespace OilProyectDesktop
             this.lblRowCounts.Size = new System.Drawing.Size(26, 29);
             this.lblRowCounts.TabIndex = 7;
             this.lblRowCounts.Text = "L";
-            // 
-            // Plate
-            // 
-            this.Plate.HeaderText = "Plate";
-            this.Plate.MinimumWidth = 6;
-            this.Plate.Name = "Plate";
-            this.Plate.Width = 125;
-            // 
-            // Customer
-            // 
-            this.Customer.HeaderText = "Custumer";
-            this.Customer.MinimumWidth = 6;
-            this.Customer.Name = "Customer";
-            this.Customer.Width = 125;
-            // 
-            // Phone
-            // 
-            this.Phone.HeaderText = "Phone";
-            this.Phone.MinimumWidth = 6;
-            this.Phone.Name = "Phone";
-            this.Phone.Width = 125;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 125;
             // 
             // btnSearch
             // 
@@ -174,10 +134,6 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblRowCounts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Plate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private MaterialSkin.Controls.MaterialRaisedButton btnSearch;
     }
 }
