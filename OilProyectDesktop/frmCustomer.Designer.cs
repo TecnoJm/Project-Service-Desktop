@@ -116,6 +116,9 @@ namespace OilProyectDesktop
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxSearchBy);
             this.Controls.Add(this.dgvCustomers);
+            this.Location = new System.Drawing.Point(370, 80);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer List";

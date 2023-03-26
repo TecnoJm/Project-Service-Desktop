@@ -42,5 +42,19 @@ namespace OilProyectDesktop
             this.pnlMainFrame.Controls.Add(frmOilService);
             frmOilService.Show();
         }
+
+        private void btnListOilServices_Click(object sender, EventArgs e)
+        {
+            frmListOilService frmListOilService = new frmListOilService() { TopLevel = false, TopMost = true };
+            this.pnlMainFrame.Controls.Add(frmListOilService);
+            frmListOilService.Show();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            frmCustomer frmCustomer = new frmCustomer() { TopLevel = false, TopMost = true };
+            this.pnlMainFrame.Controls.Add(frmCustomer);
+            frmCustomer.Show();
+        }
     }
 }

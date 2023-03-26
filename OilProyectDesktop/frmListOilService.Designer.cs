@@ -118,6 +118,9 @@ namespace OilProyectDesktop
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxSearchBy);
             this.Controls.Add(this.dgvCustomers);
+            this.Location = new System.Drawing.Point(370, 80);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmListOilService";
             this.Text = "Oil Service List";
             this.Load += new System.EventHandler(this.frmListOilService_Load);

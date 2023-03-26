@@ -247,7 +247,7 @@ namespace OilProyectDesktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1161, 771);
+            this.ClientSize = new System.Drawing.Size(1161, 784);
             this.Controls.Add(this.cbxOilType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNextChangeDate);
@@ -268,8 +268,11 @@ namespace OilProyectDesktop
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.txtCarPlate);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Location = new System.Drawing.Point(370, 80);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmOilService";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oil Service";
             this.Load += new System.EventHandler(this.frmOilService_Load);
             this.ResumeLayout(false);
