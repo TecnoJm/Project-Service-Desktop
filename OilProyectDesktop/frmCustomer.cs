@@ -1,4 +1,5 @@
 ﻿using System;
+using OilProyectDesktop.Reports;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Collections.Generic;
@@ -92,6 +93,13 @@ namespace OilProyectDesktop
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SearchData();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCustomerReport frmCustomerReport = new frmCustomerReport();
+            frmCustomerReport.Show();
         }
     }
 }

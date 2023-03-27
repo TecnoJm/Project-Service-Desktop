@@ -40,7 +40,7 @@ namespace OilProyectDesktop
             // 
             // btnListOilServices
             // 
-            this.btnListOilServices.Location = new System.Drawing.Point(48, 426);
+            this.btnListOilServices.Location = new System.Drawing.Point(48, 427);
             this.btnListOilServices.Name = "btnListOilServices";
             this.btnListOilServices.Size = new System.Drawing.Size(204, 89);
             this.btnListOilServices.TabIndex = 2;
