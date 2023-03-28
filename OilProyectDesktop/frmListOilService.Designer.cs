@@ -101,6 +101,7 @@ namespace OilProyectDesktop
             // dgvCustomers
             // 
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.Enabled = false;
             this.dgvCustomers.Location = new System.Drawing.Point(12, 198);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
@@ -114,6 +115,7 @@ namespace OilProyectDesktop
             this.btnReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.Depth = 0;
+            this.btnReport.Enabled = false;
             this.btnReport.Icon = null;
             this.btnReport.Location = new System.Drawing.Point(12, 581);
             this.btnReport.MouseState = MaterialSkin.MouseState.HOVER;

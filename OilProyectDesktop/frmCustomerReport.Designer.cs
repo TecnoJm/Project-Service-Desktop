@@ -37,10 +37,10 @@ namespace OilProyectDesktop
             this.crvCustomer.ActiveViewIndex = -1;
             this.crvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvCustomer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crvCustomer.Location = new System.Drawing.Point(0, 0);
+            this.crvCustomer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.crvCustomer.Location = new System.Drawing.Point(0, 67);
             this.crvCustomer.Name = "crvCustomer";
-            this.crvCustomer.Size = new System.Drawing.Size(1282, 707);
+            this.crvCustomer.Size = new System.Drawing.Size(1282, 640);
             this.crvCustomer.TabIndex = 0;
             // 
             // frmCustomerReport
@@ -49,8 +49,11 @@ namespace OilProyectDesktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 707);
             this.Controls.Add(this.crvCustomer);
+            this.Location = new System.Drawing.Point(370, 80);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCustomerReport";
-            this.Text = "frmCustomerReport";
+            this.Text = "Customer Report";
             this.Load += new System.EventHandler(this.frmCustomerReport_Load);
             this.ResumeLayout(false);
 

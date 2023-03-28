@@ -37,20 +37,21 @@ namespace OilProyectDesktop
             this.crvOilService.ActiveViewIndex = -1;
             this.crvOilService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvOilService.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvOilService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crvOilService.Location = new System.Drawing.Point(0, 0);
+            this.crvOilService.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.crvOilService.Location = new System.Drawing.Point(0, 63);
             this.crvOilService.Name = "crvOilService";
-            this.crvOilService.Size = new System.Drawing.Size(1282, 707);
+            this.crvOilService.Size = new System.Drawing.Size(1326, 663);
             this.crvOilService.TabIndex = 0;
             // 
             // frmOilServiceReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 707);
+            this.ClientSize = new System.Drawing.Size(1326, 726);
             this.Controls.Add(this.crvOilService);
+            this.Location = new System.Drawing.Point(370, 80);
             this.Name = "frmOilServiceReport";
-            this.Text = "frmOilServiceReport";
+            this.Text = "Oil Service Report";
             this.Load += new System.EventHandler(this.frmOilServiceReport_Load);
             this.ResumeLayout(false);
 

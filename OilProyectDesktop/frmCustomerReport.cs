@@ -1,5 +1,7 @@
 ﻿using System;
 using OilProyectDesktop.Reports;
+using MaterialSkin;
+using MaterialSkin.Controls;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,7 @@ using System.Windows.Forms;
 
 namespace OilProyectDesktop
 {
-    public partial class frmCustomerReport : Form
+    public partial class frmCustomerReport : MaterialForm
     {
 
         string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
@@ -20,6 +22,13 @@ namespace OilProyectDesktop
         public frmCustomerReport()
         {
             InitializeComponent();
+
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            var skinManager = MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
         }
 
         private void frmCustomerReport_Load(object sender, EventArgs e)

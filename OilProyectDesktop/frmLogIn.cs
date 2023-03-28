@@ -53,8 +53,6 @@ namespace OilProyectDesktop
 
             if (dr.Read())
             {
-                MessageBox.Show("Bienvenido!");
-
                 this.Hide();
                 frmMenu newScreen = new frmMenu();
                 newScreen.ShowDialog();

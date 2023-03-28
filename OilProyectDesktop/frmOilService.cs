@@ -93,8 +93,8 @@ namespace OilProyectDesktop
                 //if found, put the information in the Textboxs
                 if (dt.Rows.Count > 0)
                 {
-                    txtCustomerName.Text = dt.Rows[0][1].ToString();
-                    txtCustomerPhone.Text = dt.Rows[0][2].ToString();
+                    txtCustomerName.Text = dt.Rows[0][0].ToString();
+                    txtCustomerPhone.Text = dt.Rows[0][1].ToString();
                     txtCustomerName.Enabled = false;
                     txtCustomerPhone.Enabled = false;
                 }
@@ -108,7 +108,7 @@ namespace OilProyectDesktop
             }
             catch (Exception)
             {
-                ClearTextBox();
+                //ClearTextBox();
             }
         }
 

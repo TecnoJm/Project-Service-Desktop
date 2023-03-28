@@ -113,6 +113,7 @@ namespace OilProyectDesktop
             this.btnReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.Depth = 0;
+            this.btnReport.Enabled = false;
             this.btnReport.Icon = null;
             this.btnReport.Location = new System.Drawing.Point(12, 581);
             this.btnReport.MouseState = MaterialSkin.MouseState.HOVER;

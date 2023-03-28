@@ -50,11 +50,25 @@ namespace OilProyectDesktop
             frmListOilService.Show();
         }
 
+        private void btnReportOilService_Click(object sender, EventArgs e)
+        {
+            frmOilServiceReport frmOilServiceReport = new frmOilServiceReport() { TopLevel = false, TopMost = true };
+            this.pnlMainFrame.Controls.Add(frmOilServiceReport);
+            frmOilServiceReport.Show();
+        }
+
         private void btnCustomers_Click(object sender, EventArgs e)
         {
             frmCustomer frmCustomer = new frmCustomer() { TopLevel = false, TopMost = true };
             this.pnlMainFrame.Controls.Add(frmCustomer);
             frmCustomer.Show();
+        }
+
+        private void btnReportCustomer_Click(object sender, EventArgs e)
+        {
+            frmCustomerReport frmCustomerReport = new frmCustomerReport() { TopLevel = false, TopMost = true };
+            this.pnlMainFrame.Controls.Add(frmCustomerReport);
+            frmCustomerReport.Show();
         }
     }
 }
