@@ -95,6 +95,8 @@ namespace OilProyectDesktop
                 {
                     txtCustomerName.Text = dt.Rows[0][0].ToString();
                     txtCustomerPhone.Text = dt.Rows[0][1].ToString();
+                    txtOilGrade.Text = dt.Rows[0][2].ToString();
+                    txtMiles.Text = dt.Rows[0][3].ToString();
                     txtCustomerName.Enabled = false;
                     txtCustomerPhone.Enabled = false;
                 }
@@ -191,6 +193,18 @@ namespace OilProyectDesktop
                 txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
 
                 //Calculate Next Change Miless
+                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+            }
+        }
+
+        private void txtOilGrade_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxOilType.SelectedIndex == 0) //Standard
+            {
+                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
+            }
+                if (cbxOilType.SelectedIndex == 1) //Sythethic
+            {
                 txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
             }
         }

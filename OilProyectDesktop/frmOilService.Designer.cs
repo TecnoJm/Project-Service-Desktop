@@ -91,7 +91,7 @@ namespace OilProyectDesktop
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(617, 137);
+            this.label3.Location = new System.Drawing.Point(621, 344);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 29);
             this.label3.TabIndex = 10;
@@ -118,10 +118,11 @@ namespace OilProyectDesktop
             // txtOilGrade
             // 
             this.txtOilGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOilGrade.Location = new System.Drawing.Point(618, 179);
+            this.txtOilGrade.Location = new System.Drawing.Point(619, 394);
             this.txtOilGrade.Name = "txtOilGrade";
             this.txtOilGrade.Size = new System.Drawing.Size(417, 30);
             this.txtOilGrade.TabIndex = 11;
+            this.txtOilGrade.TextChanged += new System.EventHandler(this.txtOilGrade_TextChanged);
             // 
             // label5
             // 
@@ -136,16 +137,17 @@ namespace OilProyectDesktop
             // txtMiles
             // 
             this.txtMiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiles.Location = new System.Drawing.Point(618, 271);
+            this.txtMiles.Location = new System.Drawing.Point(618, 274);
             this.txtMiles.Name = "txtMiles";
             this.txtMiles.Size = new System.Drawing.Size(421, 30);
             this.txtMiles.TabIndex = 13;
+            this.txtMiles.Text = "0";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(617, 344);
+            this.label6.Location = new System.Drawing.Point(613, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 29);
             this.label6.TabIndex = 16;
@@ -155,15 +157,16 @@ namespace OilProyectDesktop
             // 
             this.btnRecord.AutoSize = true;
             this.btnRecord.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecord.Depth = 0;
             this.btnRecord.Icon = null;
-            this.btnRecord.Location = new System.Drawing.Point(580, 715);
+            this.btnRecord.Location = new System.Drawing.Point(583, 715);
             this.btnRecord.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Primary = true;
-            this.btnRecord.Size = new System.Drawing.Size(87, 36);
+            this.btnRecord.Size = new System.Drawing.Size(65, 36);
             this.btnRecord.TabIndex = 17;
-            this.btnRecord.Text = "Record";
+            this.btnRecord.Text = "Save";
             this.btnRecord.UseVisualStyleBackColor = true;
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
@@ -171,6 +174,7 @@ namespace OilProyectDesktop
             // 
             this.btnClear.AutoSize = true;
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Depth = 0;
             this.btnClear.Icon = null;
             this.btnClear.Location = new System.Drawing.Point(445, 715);
@@ -236,7 +240,7 @@ namespace OilProyectDesktop
             this.cbxOilType.Items.AddRange(new object[] {
             "Standard",
             "Synthetic"});
-            this.cbxOilType.Location = new System.Drawing.Point(618, 394);
+            this.cbxOilType.Location = new System.Drawing.Point(614, 173);
             this.cbxOilType.Name = "cbxOilType";
             this.cbxOilType.Size = new System.Drawing.Size(425, 33);
             this.cbxOilType.TabIndex = 24;
