@@ -48,7 +48,7 @@ namespace OilProyectDesktop
                 cmd.Parameters.AddWithValue("@prmCustomerPlate", txtCarPlate.Text);
                 cmd.Parameters.AddWithValue("@prmCustomerName", txtCustomerName.Text);
                 cmd.Parameters.AddWithValue("@prmCustomerPhone", txtCustomerPhone.Text);
-                cmd.Parameters.AddWithValue("@prmGrade", txtOilGrade.Text);
+                cmd.Parameters.AddWithValue("@prmGrade", cbxOilGrade.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@prmMiles", txtMiles.Text);
                 cmd.Parameters.AddWithValue("@prmOilType", cbxOilType.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@prmChangeMiles", txtChangeMiles.Text);
@@ -95,7 +95,7 @@ namespace OilProyectDesktop
                 {
                     txtCustomerName.Text = dt.Rows[0][0].ToString();
                     txtCustomerPhone.Text = dt.Rows[0][1].ToString();
-                    txtOilGrade.Text = dt.Rows[0][2].ToString();
+                    cbxOilGrade.Text = dt.Rows[0][2].ToString();
                     txtMiles.Text = dt.Rows[0][3].ToString();
                     txtCustomerName.Enabled = false;
                     txtCustomerPhone.Enabled = false;
@@ -114,12 +114,131 @@ namespace OilProyectDesktop
             }
         }
 
+        void CalculateDataForOilType()
+        {
+            try
+            {
+                DateTime nextMonth = DateTime.Now;
+                cbxOilGrade.Enabled = true;
+
+                //Create new Date for Oil Service
+                if (cbxOilType.SelectedIndex == 0) //High Mileage
+                {
+                    DateTime newDate = nextMonth.AddMonths(3);
+                    txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                    //Calculate Next Change Miles
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
+
+                    //Add Oil Grades for High Mileage
+                    cbxOilGrade.Items.Clear();
+                    cbxOilGrade.Items.Add("5W-20");
+                    cbxOilGrade.Items.Add("5W-30");
+                    cbxOilGrade.Items.Add("10W-30");
+                    cbxOilGrade.Items.Add("10W-40");
+                }
+
+                if (cbxOilType.SelectedIndex == 1) //Sythethic Blend
+                {
+                    DateTime newDate = nextMonth.AddMonths(5);
+                    txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                    //Calculate Next Change Miles
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+
+                    //Add Oil Grades for Synthetic Blend
+                    cbxOilGrade.Items.Clear();
+                    cbxOilGrade.Items.Add("0W-40");
+                    cbxOilGrade.Items.Add("10W-30");
+                }
+
+                if (cbxOilType.SelectedIndex == 2) //Flend Sythethic
+                {
+                    DateTime newDate = nextMonth.AddMonths(5);
+                    txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                    //Calculate Next Change Miles
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+
+                    //Add Oil Grades for Flend Synthetic
+                    cbxOilGrade.Items.Clear();
+                    cbxOilGrade.Items.Add("5W-30");
+                    cbxOilGrade.Items.Add("10W-40");
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        void CalculateDataForMiles()
+        {
+            DateTime nextMonth = DateTime.Now;
+            try
+            {
+                //Create new Date for Oil Service
+                if (cbxOilType.SelectedIndex == 0) //High Mileage
+                {
+                    DateTime newDate = nextMonth.AddMonths(3);
+                    txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                    //Calculate Next Change Miles
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
+                }
+
+                if (cbxOilType.SelectedIndex == 1) //Sythethic Blend
+                {
+                    DateTime newDate = nextMonth.AddMonths(5);
+                    txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                    //Calculate Next Change Miles
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+                }
+
+                if (cbxOilType.SelectedIndex == 2) //Flend Sythethic
+                {
+                    DateTime newDate = nextMonth.AddMonths(5);
+                    txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
+
+                    //Calculate Next Change Miles
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        void CalculateDataForOilGrade()
+        {
+            try
+            {
+                if (cbxOilType.SelectedIndex == 0) //High Mileage
+                {
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
+                }
+                if (cbxOilType.SelectedIndex == 1) //Sythethic Blend
+                {
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+                }
+                if (cbxOilType.SelectedIndex == 2) //Flend Sythethic
+                {
+                    txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
         void ClearTextBox()
         {
             txtCarPlate.Clear();
             txtCustomerName.Clear();
             txtCustomerPhone.Clear();
-            txtOilGrade.Clear();
             txtMiles.Clear();
             txtChangeMiles.Clear();
             txtNextChangeDate.Clear();
@@ -151,62 +270,17 @@ namespace OilProyectDesktop
 
         private void cbxOilType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime nextMonth = DateTime.Now;
-
-            //Create new Date for Oil Service
-            if (cbxOilType.SelectedIndex == 0) //Standard
-            {
-                DateTime newDate = nextMonth.AddMonths(3);
-                txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
-
-                //Calculate Next Change Miles
-                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
-            }
-            
-            if (cbxOilType.SelectedIndex == 1) //Sythethic
-            {
-                DateTime newDate = nextMonth.AddMonths(5);
-                txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
-
-                //Calculate Next Change Miles
-                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
-            }
+            CalculateDataForOilType();
         }
 
         private void txtMiles_TextChanged(object sender, EventArgs e)
         {
-            DateTime nextMonth = DateTime.Now;
-
-            //Create new Date for Oil Service
-            if (cbxOilType.SelectedIndex == 0) //Standard
-            {
-                DateTime newDate = nextMonth.AddMonths(3);
-                txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
-
-                //Calculate Next Change Miles
-                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
-            }
-
-            if (cbxOilType.SelectedIndex == 1) //Sythethic
-            {
-                DateTime newDate = nextMonth.AddMonths(5);
-                txtNextChangeDate.Text = newDate.ToString("ddd, dd MMM yyy");
-
-                //Calculate Next Change Miless
-                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
-            }
+            CalculateDataForMiles();
         }
 
-        private void txtOilGrade_TextChanged(object sender, EventArgs e)
+        private void cbxOilGrade_TextChanged(object sender, EventArgs e)
         {
-            if (cbxOilType.SelectedIndex == 0) //Standard
-            {
-                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 3000);
-            }
-                if (cbxOilType.SelectedIndex == 1) //Sythethic
-            {
-                txtChangeMiles.Text = Convert.ToString(Convert.ToInt32(txtMiles.Text) + 5000);
-            }
+            CalculateDataForOilGrade();
         }
     }
  }

@@ -36,7 +36,6 @@ namespace OilProyectDesktop
             this.label3 = new System.Windows.Forms.Label();
             this.txtCustomerPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtOilGrade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMiles = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@ namespace OilProyectDesktop
             this.label8 = new System.Windows.Forms.Label();
             this.txtNextChangeDate = new System.Windows.Forms.TextBox();
             this.cbxOilType = new System.Windows.Forms.ComboBox();
+            this.cbxOilGrade = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -114,15 +114,6 @@ namespace OilProyectDesktop
             this.label4.Size = new System.Drawing.Size(203, 29);
             this.label4.TabIndex = 12;
             this.label4.Text = "Customer Phone";
-            // 
-            // txtOilGrade
-            // 
-            this.txtOilGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOilGrade.Location = new System.Drawing.Point(619, 394);
-            this.txtOilGrade.Name = "txtOilGrade";
-            this.txtOilGrade.Size = new System.Drawing.Size(417, 30);
-            this.txtOilGrade.TabIndex = 11;
-            this.txtOilGrade.TextChanged += new System.EventHandler(this.txtOilGrade_TextChanged);
             // 
             // label5
             // 
@@ -238,13 +229,25 @@ namespace OilProyectDesktop
             this.cbxOilType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxOilType.FormattingEnabled = true;
             this.cbxOilType.Items.AddRange(new object[] {
-            "Standard",
-            "Synthetic"});
+            "High Mileage",
+            "Synthetic Blend",
+            "Flend Synthetic"});
             this.cbxOilType.Location = new System.Drawing.Point(614, 173);
             this.cbxOilType.Name = "cbxOilType";
             this.cbxOilType.Size = new System.Drawing.Size(425, 33);
             this.cbxOilType.TabIndex = 24;
             this.cbxOilType.SelectedIndexChanged += new System.EventHandler(this.cbxOilType_SelectedIndexChanged);
+            // 
+            // cbxOilGrade
+            // 
+            this.cbxOilGrade.Enabled = false;
+            this.cbxOilGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxOilGrade.FormattingEnabled = true;
+            this.cbxOilGrade.Location = new System.Drawing.Point(618, 394);
+            this.cbxOilGrade.Name = "cbxOilGrade";
+            this.cbxOilGrade.Size = new System.Drawing.Size(422, 33);
+            this.cbxOilGrade.TabIndex = 25;
+            this.cbxOilGrade.TextChanged += new System.EventHandler(this.cbxOilGrade_TextChanged);
             // 
             // frmOilService
             // 
@@ -252,6 +255,7 @@ namespace OilProyectDesktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1161, 784);
+            this.Controls.Add(this.cbxOilGrade);
             this.Controls.Add(this.cbxOilType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNextChangeDate);
@@ -264,7 +268,6 @@ namespace OilProyectDesktop
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMiles);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtOilGrade);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCustomerPhone);
             this.Controls.Add(this.label2);
@@ -293,7 +296,6 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCustomerPhone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtOilGrade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMiles;
         private System.Windows.Forms.Label label6;
@@ -305,5 +307,6 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNextChangeDate;
         private System.Windows.Forms.ComboBox cbxOilType;
+        private System.Windows.Forms.ComboBox cbxOilGrade;
     }
 }
