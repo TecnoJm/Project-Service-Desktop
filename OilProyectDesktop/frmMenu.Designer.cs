@@ -42,7 +42,7 @@ namespace OilProyectDesktop
             // 
             // btnListOilServices
             // 
-            this.btnListOilServices.Location = new System.Drawing.Point(48, 241);
+            this.btnListOilServices.Location = new System.Drawing.Point(38, 293);
             this.btnListOilServices.Name = "btnListOilServices";
             this.btnListOilServices.Size = new System.Drawing.Size(204, 89);
             this.btnListOilServices.TabIndex = 2;
@@ -52,7 +52,7 @@ namespace OilProyectDesktop
             // 
             // btnOilService
             // 
-            this.btnOilService.Location = new System.Drawing.Point(48, 91);
+            this.btnOilService.Location = new System.Drawing.Point(38, 150);
             this.btnOilService.Name = "btnOilService";
             this.btnOilService.Size = new System.Drawing.Size(204, 89);
             this.btnOilService.TabIndex = 0;
@@ -65,9 +65,9 @@ namespace OilProyectDesktop
             this.pnlMainFrame.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnlMainFrame.Controls.Add(this.panel2);
             this.pnlMainFrame.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlMainFrame.Location = new System.Drawing.Point(0, 80);
+            this.pnlMainFrame.Location = new System.Drawing.Point(0, 77);
             this.pnlMainFrame.Name = "pnlMainFrame";
-            this.pnlMainFrame.Size = new System.Drawing.Size(1942, 993);
+            this.pnlMainFrame.Size = new System.Drawing.Size(1942, 996);
             this.pnlMainFrame.TabIndex = 1;
             // 
             // panel2
@@ -81,12 +81,12 @@ namespace OilProyectDesktop
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(305, 993);
+            this.panel2.Size = new System.Drawing.Size(284, 996);
             this.panel2.TabIndex = 0;
             // 
             // btnReportCustomer
             // 
-            this.btnReportCustomer.Location = new System.Drawing.Point(48, 808);
+            this.btnReportCustomer.Location = new System.Drawing.Point(38, 705);
             this.btnReportCustomer.Name = "btnReportCustomer";
             this.btnReportCustomer.Size = new System.Drawing.Size(204, 89);
             this.btnReportCustomer.TabIndex = 4;
@@ -96,7 +96,7 @@ namespace OilProyectDesktop
             // 
             // btnReportOilService
             // 
-            this.btnReportOilService.Location = new System.Drawing.Point(48, 438);
+            this.btnReportOilService.Location = new System.Drawing.Point(38, 439);
             this.btnReportOilService.Name = "btnReportOilService";
             this.btnReportOilService.Size = new System.Drawing.Size(204, 89);
             this.btnReportOilService.TabIndex = 3;
@@ -106,7 +106,7 @@ namespace OilProyectDesktop
             // 
             // btnCustomers
             // 
-            this.btnCustomers.Location = new System.Drawing.Point(48, 621);
+            this.btnCustomers.Location = new System.Drawing.Point(38, 569);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(204, 89);
             this.btnCustomers.TabIndex = 1;

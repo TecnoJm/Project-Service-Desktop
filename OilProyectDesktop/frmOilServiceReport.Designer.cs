@@ -37,7 +37,6 @@ namespace OilProyectDesktop
             this.crvOilService.ActiveViewIndex = -1;
             this.crvOilService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvOilService.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvOilService.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crvOilService.Location = new System.Drawing.Point(0, 63);
             this.crvOilService.Name = "crvOilService";
             this.crvOilService.Size = new System.Drawing.Size(1326, 663);
