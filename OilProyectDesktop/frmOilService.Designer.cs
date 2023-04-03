@@ -91,7 +91,7 @@ namespace OilProyectDesktop
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(621, 344);
+            this.label3.Location = new System.Drawing.Point(613, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 29);
             this.label3.TabIndex = 10;
@@ -119,7 +119,7 @@ namespace OilProyectDesktop
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(617, 227);
+            this.label5.Location = new System.Drawing.Point(609, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 29);
             this.label5.TabIndex = 14;
@@ -128,11 +128,12 @@ namespace OilProyectDesktop
             // txtMiles
             // 
             this.txtMiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiles.Location = new System.Drawing.Point(618, 274);
+            this.txtMiles.Location = new System.Drawing.Point(613, 394);
             this.txtMiles.Name = "txtMiles";
             this.txtMiles.Size = new System.Drawing.Size(421, 30);
             this.txtMiles.TabIndex = 13;
             this.txtMiles.Text = "0";
+            this.txtMiles.TextChanged += new System.EventHandler(this.txtMiles_TextChanged_1);
             // 
             // label6
             // 
@@ -190,7 +191,7 @@ namespace OilProyectDesktop
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(621, 467);
+            this.label7.Location = new System.Drawing.Point(613, 467);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 29);
             this.label7.TabIndex = 21;
@@ -200,7 +201,7 @@ namespace OilProyectDesktop
             // 
             this.txtChangeMiles.Enabled = false;
             this.txtChangeMiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChangeMiles.Location = new System.Drawing.Point(619, 510);
+            this.txtChangeMiles.Location = new System.Drawing.Point(613, 510);
             this.txtChangeMiles.Name = "txtChangeMiles";
             this.txtChangeMiles.Size = new System.Drawing.Size(421, 30);
             this.txtChangeMiles.TabIndex = 20;
@@ -209,7 +210,7 @@ namespace OilProyectDesktop
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(621, 575);
+            this.label8.Location = new System.Drawing.Point(608, 573);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(226, 29);
             this.label8.TabIndex = 23;
@@ -219,7 +220,7 @@ namespace OilProyectDesktop
             // 
             this.txtNextChangeDate.Enabled = false;
             this.txtNextChangeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNextChangeDate.Location = new System.Drawing.Point(622, 618);
+            this.txtNextChangeDate.Location = new System.Drawing.Point(613, 618);
             this.txtNextChangeDate.Name = "txtNextChangeDate";
             this.txtNextChangeDate.Size = new System.Drawing.Size(421, 30);
             this.txtNextChangeDate.TabIndex = 22;
@@ -232,7 +233,7 @@ namespace OilProyectDesktop
             "High Mileage",
             "Synthetic Blend",
             "Flend Synthetic"});
-            this.cbxOilType.Location = new System.Drawing.Point(614, 173);
+            this.cbxOilType.Location = new System.Drawing.Point(613, 174);
             this.cbxOilType.Name = "cbxOilType";
             this.cbxOilType.Size = new System.Drawing.Size(425, 33);
             this.cbxOilType.TabIndex = 24;
@@ -243,7 +244,7 @@ namespace OilProyectDesktop
             this.cbxOilGrade.Enabled = false;
             this.cbxOilGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxOilGrade.FormattingEnabled = true;
-            this.cbxOilGrade.Location = new System.Drawing.Point(618, 394);
+            this.cbxOilGrade.Location = new System.Drawing.Point(613, 271);
             this.cbxOilGrade.Name = "cbxOilGrade";
             this.cbxOilGrade.Size = new System.Drawing.Size(422, 33);
             this.cbxOilGrade.TabIndex = 25;

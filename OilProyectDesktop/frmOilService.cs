@@ -95,8 +95,9 @@ namespace OilProyectDesktop
                 {
                     txtCustomerName.Text = dt.Rows[0][0].ToString();
                     txtCustomerPhone.Text = dt.Rows[0][1].ToString();
-                    cbxOilGrade.Text = dt.Rows[0][2].ToString();
-                    txtMiles.Text = dt.Rows[0][3].ToString();
+                    cbxOilType.Text = dt.Rows[0][2].ToString();
+                    cbxOilGrade.Text = dt.Rows[0][3].ToString();
+                    txtMiles.Text = dt.Rows[0][4].ToString();
                     txtCustomerName.Enabled = false;
                     txtCustomerPhone.Enabled = false;
                 }
@@ -106,6 +107,11 @@ namespace OilProyectDesktop
                     txtCustomerPhone.Text = null;
                     txtCustomerName.Enabled = true;
                     txtCustomerPhone.Enabled = true;
+                    cbxOilType.Text = "";
+                    cbxOilGrade.Text = "";
+                    txtMiles.Text = "0";
+                    txtChangeMiles.Text = "";
+                    txtNextChangeDate.Text = "";
                 }
             }
             catch (Exception)
@@ -273,14 +279,14 @@ namespace OilProyectDesktop
             CalculateDataForOilType();
         }
 
-        private void txtMiles_TextChanged(object sender, EventArgs e)
-        {
-            CalculateDataForMiles();
-        }
-
         private void cbxOilGrade_TextChanged(object sender, EventArgs e)
         {
             CalculateDataForOilGrade();
+        }
+
+        private void txtMiles_TextChanged_1(object sender, EventArgs e)
+        {
+            CalculateDataForMiles();
         }
     }
  }
