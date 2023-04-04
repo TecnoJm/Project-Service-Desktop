@@ -69,8 +69,8 @@ namespace OilProyectDesktop
             this.cbxOptions.Items.AddRange(new object[] {
             "Plate",
             "Date",
-            "ASC/DSC",
-            "DSC/ASC"});
+            "Order By: older",
+            "Order By: newest"});
             this.cbxOptions.Location = new System.Drawing.Point(177, 100);
             this.cbxOptions.Name = "cbxOptions";
             this.cbxOptions.Size = new System.Drawing.Size(218, 33);
