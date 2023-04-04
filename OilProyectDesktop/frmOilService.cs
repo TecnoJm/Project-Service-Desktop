@@ -48,15 +48,34 @@ namespace OilProyectDesktop
                 cmd.Parameters.AddWithValue("@prmCustomerPlate", txtCarPlate.Text);
                 cmd.Parameters.AddWithValue("@prmCustomerName", txtCustomerName.Text);
                 cmd.Parameters.AddWithValue("@prmCustomerPhone", txtCustomerPhone.Text);
-                cmd.Parameters.AddWithValue("@prmGrade", cbxOilGrade.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@prmGrade", cbxOilGrade.Text);
                 cmd.Parameters.AddWithValue("@prmMiles", txtMiles.Text);
-                cmd.Parameters.AddWithValue("@prmOilType", cbxOilType.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@prmOilType", cbxOilType.Text);
                 cmd.Parameters.AddWithValue("@prmChangeMiles", txtChangeMiles.Text);
                 cmd.Parameters.AddWithValue("@prmTodayDate", DateTime.Now);
 
                 //Change date format for SQL to recognize the information.
-                txtNextChangeDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                cmd.Parameters.AddWithValue("@prmChangeDate", txtNextChangeDate.Text);
+                DateTime nextMonth = DateTime.Now;
+
+                if (cbxOilType.SelectedIndex == 0)
+                {
+                    DateTime newDate = nextMonth.AddMonths(3);
+                    txtNextChangeDate.Text = newDate.ToString("yyyy-MM-dd");
+                    cmd.Parameters.AddWithValue("@prmChangeDate", txtNextChangeDate.Text);
+                }
+                else if(cbxOilType.SelectedIndex == 1)
+                {
+                    DateTime newDate = nextMonth.AddMonths(5);
+                    txtNextChangeDate.Text = newDate.ToString("yyyy-MM-dd");
+                    cmd.Parameters.AddWithValue("@prmChangeDate", txtNextChangeDate.Text);
+                }
+                else if(cbxOilType.SelectedIndex == 2)
+                {
+                    DateTime newDate = nextMonth.AddMonths(5);
+                    txtNextChangeDate.Text = newDate.ToString("yyyy-MM-dd");
+                    cmd.Parameters.AddWithValue("@prmChangeDate", txtNextChangeDate.Text);
+                }
+
                 con.Open();
 
                 int rows = cmd.ExecuteNonQuery();
@@ -277,6 +296,7 @@ namespace OilProyectDesktop
         private void cbxOilType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalculateDataForOilType();
+            MessageBox.Show(cbxOilType.SelectedItem.ToString());
         }
 
         private void cbxOilGrade_TextChanged(object sender, EventArgs e)
