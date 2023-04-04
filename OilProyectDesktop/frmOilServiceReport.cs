@@ -68,12 +68,24 @@ namespace OilProyectDesktop
 
                 if (cbxOptions.SelectedIndex == 2) //ASC/DSC
                 {
-
+                    //Make invisible inneccesary objects
+                    lblFrom.Visible = false;
+                    lblTo.Visible = false;
+                    dtpFrom.Visible = false;
+                    dtpTo.Visible = false;
+                    lblCarPlate.Visible = false;
+                    txtCarPlate.Visible = false;
                 }
 
                 if (cbxOptions.SelectedIndex == 3) //DSC/ASC
                 {
-
+                    //Make invisible inneccesary objects
+                    lblFrom.Visible = false;
+                    lblTo.Visible = false;
+                    dtpFrom.Visible = false;
+                    dtpTo.Visible = false;
+                    lblCarPlate.Visible = false;
+                    txtCarPlate.Visible = false;
                 }
             }
             catch (Exception)
@@ -118,7 +130,7 @@ namespace OilProyectDesktop
 
                 if (cbxOptions.SelectedIndex == 1) //Date
                 {
-                    //Fitler OilService Table with data from txtCarPlate
+                    //Fitler OilService Table with data between Dates
 
                     //Search OilService from OilService table.
                     SqlConnection con = new SqlConnection(connStr);
@@ -145,6 +157,63 @@ namespace OilProyectDesktop
                     crvOilService.ReportSource = oilserviceReport;
                     con.Close();
                 }
+
+                if(cbxOptions.SelectedIndex == 2) //ASC/DSC
+                {
+                    //Fitler OilService Table ASC
+
+                    //Search OilService from OilService table.
+                    SqlConnection con = new SqlConnection(connStr);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    SqlCommand cmd;
+                    DataSet ds = new DataSet();
+
+                    con.Open();
+
+                    cmd = new SqlCommand("spSearchCustomerOilServiceReportASC", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+
+                    da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    //Fill Customer Report with Dataset
+                    rptOilService oilserviceReport = new rptOilService();
+                    oilserviceReport.SetDataSource(ds.Tables[0]);
+                    crvOilService.ReportSource = oilserviceReport;
+                    con.Close();
+                }
+
+                if (cbxOptions.SelectedIndex == 3) //DSC/ASC
+                {
+                    //Fitler OilService Table ASC
+
+                    //Search OilService from OilService table.
+                    SqlConnection con = new SqlConnection(connStr);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    SqlCommand cmd;
+                    DataSet ds = new DataSet();
+
+                    con.Open();
+
+                    cmd = new SqlCommand("spSearchCustomerOilServiceReportDESC", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+
+                    da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    //Fill Customer Report with Dataset
+                    rptOilService oilserviceReport = new rptOilService();
+                    oilserviceReport.SetDataSource(ds.Tables[0]);
+                    crvOilService.ReportSource = oilserviceReport;
+                    con.Close();
+                }
+
             }
             catch (Exception)
             {
