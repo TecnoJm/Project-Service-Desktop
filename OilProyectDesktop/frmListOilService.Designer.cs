@@ -35,7 +35,6 @@ namespace OilProyectDesktop
             this.label1 = new System.Windows.Forms.Label();
             this.cbxSearchBy = new System.Windows.Forms.ComboBox();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.btnReport = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,33 +105,14 @@ namespace OilProyectDesktop
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
             this.dgvCustomers.RowTemplate.Height = 24;
-            this.dgvCustomers.Size = new System.Drawing.Size(1147, 374);
+            this.dgvCustomers.Size = new System.Drawing.Size(1147, 416);
             this.dgvCustomers.TabIndex = 9;
-            // 
-            // btnReport
-            // 
-            this.btnReport.AutoSize = true;
-            this.btnReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReport.Depth = 0;
-            this.btnReport.Enabled = false;
-            this.btnReport.Icon = null;
-            this.btnReport.Location = new System.Drawing.Point(12, 581);
-            this.btnReport.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Primary = true;
-            this.btnReport.Size = new System.Drawing.Size(131, 36);
-            this.btnReport.TabIndex = 15;
-            this.btnReport.Text = "View Report";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // frmListOilService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 626);
-            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblRowCounts);
             this.Controls.Add(this.txtSearch);
@@ -159,6 +139,5 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxSearchBy;
         private System.Windows.Forms.DataGridView dgvCustomers;
-        private MaterialSkin.Controls.MaterialRaisedButton btnReport;
     }
 }

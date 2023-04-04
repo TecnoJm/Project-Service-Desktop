@@ -95,12 +95,5 @@ namespace OilProyectDesktop
         {
             SearchData();
         }
-
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmOilServiceReport frmOilServiceReport = new frmOilServiceReport();
-            frmOilServiceReport.Show();
-        }
     }
 }
