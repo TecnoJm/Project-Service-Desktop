@@ -102,7 +102,7 @@ namespace OilProyectDesktop
                 {
                     //Fitler OilService Table with data from txtCarPlate
 
-                    //Search OilService from OilService table.
+                    //Search OilService from dbo.OilService table.
                     SqlConnection con = new SqlConnection(connStr);
                     DataTable dt = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter();
@@ -120,10 +120,10 @@ namespace OilProyectDesktop
                     da = new SqlDataAdapter(cmd);
                     da.Fill(ds);
 
-                    //Fill Customer Report with Dataset
-                    rptOilService oilserviceReport = new rptOilService();
-                    oilserviceReport.SetDataSource(ds.Tables[0]);
-                    crvOilService.ReportSource = oilserviceReport;
+                    //Fill Customers Report Dataset with rptOilServiceByCustomer
+                    rptOilServiceByCustomer oilserviceReportByCustomer = new rptOilServiceByCustomer();
+                    oilserviceReportByCustomer.SetDataSource(ds.Tables[0]);
+                    crvOilService.ReportSource = oilserviceReportByCustomer;
                     con.Close();
 
                 }
@@ -151,7 +151,7 @@ namespace OilProyectDesktop
                     da = new SqlDataAdapter(cmd);
                     da.Fill(ds);
 
-                    //Fill Customer Report with Dataset
+                    //Fill Customer Report with Dataset with rptOilService
                     rptOilService oilserviceReport = new rptOilService();
                     oilserviceReport.SetDataSource(ds.Tables[0]);
                     crvOilService.ReportSource = oilserviceReport;
