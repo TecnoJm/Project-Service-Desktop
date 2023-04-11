@@ -15,6 +15,9 @@ namespace OilProyectDesktop
 {
     public partial class frmMenu : MaterialForm
     {
+
+        string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
+
         //Create Material Skin Forms options
         public frmMenu()
         {
@@ -28,9 +31,68 @@ namespace OilProyectDesktop
             skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
+        //Void methods
+        //#####################################################################//
+
+        void CalculateChangeDate()
         {
 
+            try
+            {
+                SqlConnection con = new SqlConnection(connStr);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter();
+                SqlCommand cmd;
+                DataSet ds = new DataSet();
+
+                //Today's Date and 
+                DateTime todayDate = DateTime.Now;
+                TimeSpan tDifference;
+                int timeDiffernce;
+
+                con.Open();
+
+                cmd = new SqlCommand("Select CustomerPlate, ChangeDate from dbo.OilService", con);
+                cmd.ExecuteNonQuery();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+
+
+                //Read each CustomerPlate and ChangeDate rows from dbo.OilService
+                foreach (DataRow row in dt.Rows)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if ((DateTime)dt.Rows[i][1] != todayDate)
+                        {
+
+                            tDifference = (DateTime)dt.Rows[i][1] - todayDate;
+                            timeDiffernce = tDifference.Days;
+
+                            if(timeDiffernce <= 14)
+                            {
+                                ntiChangeDate.Icon = SystemIcons.Application;
+                                ntiChangeDate.BalloonTipTitle = "Claudio AutoService Notification";
+                                ntiChangeDate.BalloonTipText = "El cambio a la placa: " + dt.Rows[i][0] + " para la fecha: " + dt.Rows[i][1];
+                                ntiChangeDate.ShowBalloonTip(1000);
+                            }
+                        }
+                    }
+                }
+
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        //#####################################################################//
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            timerChangeDate.Start();
         }
 
         //Form Buttons
@@ -69,6 +131,11 @@ namespace OilProyectDesktop
             frmCustomerReport frmCustomerReport = new frmCustomerReport() { TopLevel = false, TopMost = true };
             this.pnlMainFrame.Controls.Add(frmCustomerReport);
             frmCustomerReport.Show();
+        }
+
+        private void timerChangeDate_Tick(object sender, EventArgs e)
+        {
+            CalculateChangeDate();
         }
     }
 }

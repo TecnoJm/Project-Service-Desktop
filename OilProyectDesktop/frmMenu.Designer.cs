@@ -29,13 +29,17 @@ namespace OilProyectDesktop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnListOilServices = new System.Windows.Forms.Button();
             this.btnOilService = new System.Windows.Forms.Button();
             this.pnlMainFrame = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblChangeDate = new System.Windows.Forms.Label();
             this.btnReportCustomer = new System.Windows.Forms.Button();
             this.btnReportOilService = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
+            this.ntiChangeDate = new System.Windows.Forms.NotifyIcon(this.components);
+            this.timerChangeDate = new System.Windows.Forms.Timer(this.components);
             this.pnlMainFrame.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +77,7 @@ namespace OilProyectDesktop
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.lblChangeDate);
             this.panel2.Controls.Add(this.btnReportCustomer);
             this.panel2.Controls.Add(this.btnReportOilService);
             this.panel2.Controls.Add(this.btnOilService);
@@ -83,6 +88,16 @@ namespace OilProyectDesktop
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(284, 996);
             this.panel2.TabIndex = 0;
+            // 
+            // lblChangeDate
+            // 
+            this.lblChangeDate.AutoSize = true;
+            this.lblChangeDate.Location = new System.Drawing.Point(3, 11);
+            this.lblChangeDate.Name = "lblChangeDate";
+            this.lblChangeDate.Size = new System.Drawing.Size(46, 17);
+            this.lblChangeDate.TabIndex = 5;
+            this.lblChangeDate.Text = "label1";
+            this.lblChangeDate.Visible = false;
             // 
             // btnReportCustomer
             // 
@@ -114,6 +129,16 @@ namespace OilProyectDesktop
             this.btnCustomers.UseVisualStyleBackColor = true;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
+            // ntiChangeDate
+            // 
+            this.ntiChangeDate.Text = "notifyIcon1";
+            this.ntiChangeDate.Visible = true;
+            // 
+            // timerChangeDate
+            // 
+            this.timerChangeDate.Interval = 10000;
+            this.timerChangeDate.Tick += new System.EventHandler(this.timerChangeDate_Tick);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,6 +155,7 @@ namespace OilProyectDesktop
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlMainFrame.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -142,5 +168,8 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Button btnReportCustomer;
         private System.Windows.Forms.Button btnReportOilService;
         private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.NotifyIcon ntiChangeDate;
+        private System.Windows.Forms.Label lblChangeDate;
+        private System.Windows.Forms.Timer timerChangeDate;
     }
 }
