@@ -57,6 +57,7 @@ namespace OilProyectDesktop
                 da.SelectCommand = cmd;
                 da.Fill(dt);
 
+                //string s = "2001-05-01";
 
                 //Read each CustomerPlate and ChangeDate rows from dbo.OilService
                 foreach (DataRow row in dt.Rows)
@@ -66,15 +67,16 @@ namespace OilProyectDesktop
                         if ((DateTime)dt.Rows[i][1] != todayDate)
                         {
 
-                            tDifference = (DateTime)dt.Rows[i][1] - todayDate;
+                            tDifference = todayDate - (DateTime)dt.Rows[i][1];
                             timeDiffernce = tDifference.Days;
 
                             if(timeDiffernce <= 14)
                             {
                                 ntiChangeDate.Icon = SystemIcons.Application;
                                 ntiChangeDate.BalloonTipTitle = "Claudio AutoService Notification";
-                                ntiChangeDate.BalloonTipText = "El cambio a la placa: " + dt.Rows[i][0] + " para la fecha: " + dt.Rows[i][1];
+                                ntiChangeDate.BalloonTipText = "The Oil Change for the Plate: " + dt.Rows[i][0] + "\n to date: " + dt.Rows[i][1];
                                 ntiChangeDate.ShowBalloonTip(1000);
+                                MessageBox.Show(todayDate.ToString());
                             }
                         }
                     }
@@ -82,9 +84,9 @@ namespace OilProyectDesktop
 
                 con.Close();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                MessageBox.Show(e.ToString());
             }
         }
 

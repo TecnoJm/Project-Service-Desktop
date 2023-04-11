@@ -136,7 +136,7 @@ namespace OilProyectDesktop
             // 
             // timerChangeDate
             // 
-            this.timerChangeDate.Interval = 10000;
+            this.timerChangeDate.Interval = 5000;
             this.timerChangeDate.Tick += new System.EventHandler(this.timerChangeDate_Tick);
             // 
             // frmMenu
