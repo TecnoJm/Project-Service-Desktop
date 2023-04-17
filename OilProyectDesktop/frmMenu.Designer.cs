@@ -40,8 +40,12 @@ namespace OilProyectDesktop
             this.btnCustomers = new System.Windows.Forms.Button();
             this.ntiChangeDate = new System.Windows.Forms.NotifyIcon(this.components);
             this.timerChangeDate = new System.Windows.Forms.Timer(this.components);
+            this.pnlFormMove = new System.Windows.Forms.Panel();
+            this.btnCloseForm = new System.Windows.Forms.Button();
+            this.btnMinimizeForm = new System.Windows.Forms.Button();
             this.pnlMainFrame.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlFormMove.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnListOilServices
@@ -69,9 +73,9 @@ namespace OilProyectDesktop
             this.pnlMainFrame.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnlMainFrame.Controls.Add(this.panel2);
             this.pnlMainFrame.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlMainFrame.Location = new System.Drawing.Point(0, 77);
+            this.pnlMainFrame.Location = new System.Drawing.Point(0, 40);
             this.pnlMainFrame.Name = "pnlMainFrame";
-            this.pnlMainFrame.Size = new System.Drawing.Size(1942, 996);
+            this.pnlMainFrame.Size = new System.Drawing.Size(1924, 1015);
             this.pnlMainFrame.TabIndex = 1;
             // 
             // panel2
@@ -86,7 +90,7 @@ namespace OilProyectDesktop
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(284, 996);
+            this.panel2.Size = new System.Drawing.Size(284, 1015);
             this.panel2.TabIndex = 0;
             // 
             // lblChangeDate
@@ -139,15 +143,58 @@ namespace OilProyectDesktop
             this.timerChangeDate.Interval = 5000;
             this.timerChangeDate.Tick += new System.EventHandler(this.timerChangeDate_Tick);
             // 
+            // pnlFormMove
+            // 
+            this.pnlFormMove.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlFormMove.Controls.Add(this.btnMinimizeForm);
+            this.pnlFormMove.Controls.Add(this.btnCloseForm);
+            this.pnlFormMove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormMove.Location = new System.Drawing.Point(0, 0);
+            this.pnlFormMove.Name = "pnlFormMove";
+            this.pnlFormMove.Size = new System.Drawing.Size(1924, 53);
+            this.pnlFormMove.TabIndex = 2;
+            // 
+            // btnCloseForm
+            // 
+            this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCloseForm.Location = new System.Drawing.Point(1849, 0);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(75, 53);
+            this.btnCloseForm.TabIndex = 0;
+            this.btnCloseForm.Text = "X";
+            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            // 
+            // btnMinimizeForm
+            // 
+            this.btnMinimizeForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizeForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimizeForm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMinimizeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimizeForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMinimizeForm.Location = new System.Drawing.Point(1774, 0);
+            this.btnMinimizeForm.Name = "btnMinimizeForm";
+            this.btnMinimizeForm.Size = new System.Drawing.Size(75, 53);
+            this.btnMinimizeForm.TabIndex = 1;
+            this.btnMinimizeForm.Text = "__";
+            this.btnMinimizeForm.UseVisualStyleBackColor = true;
+            this.btnMinimizeForm.Click += new System.EventHandler(this.btnMinimizeForm_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1942, 1073);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.pnlFormMove);
             this.Controls.Add(this.pnlMainFrame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenu";
-            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.TopMost = true;
@@ -156,6 +203,7 @@ namespace OilProyectDesktop
             this.pnlMainFrame.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlFormMove.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -171,5 +219,8 @@ namespace OilProyectDesktop
         private System.Windows.Forms.NotifyIcon ntiChangeDate;
         private System.Windows.Forms.Label lblChangeDate;
         private System.Windows.Forms.Timer timerChangeDate;
+        private System.Windows.Forms.Panel pnlFormMove;
+        private System.Windows.Forms.Button btnMinimizeForm;
+        private System.Windows.Forms.Button btnCloseForm;
     }
 }

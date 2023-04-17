@@ -13,7 +13,7 @@ using System.Data.SqlClient;
 
 namespace OilProyectDesktop
 {
-    public partial class frmMenu : MaterialForm
+    public partial class frmMenu : Form
     {
 
         string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
@@ -23,12 +23,12 @@ namespace OilProyectDesktop
         {
             InitializeComponent();
 
-            this.MaximumSize = this.Size;
+            /*this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);*/
         }
 
         //Void methods
@@ -76,7 +76,6 @@ namespace OilProyectDesktop
                                 ntiChangeDate.BalloonTipTitle = "Claudio AutoService Notification";
                                 ntiChangeDate.BalloonTipText = "The Oil Change for the Plate: " + dt.Rows[i][0] + "\n to date: " + dt.Rows[i][1];
                                 ntiChangeDate.ShowBalloonTip(1000);
-                                MessageBox.Show(todayDate.ToString());
                             }
                         }
                     }
@@ -138,6 +137,16 @@ namespace OilProyectDesktop
         private void timerChangeDate_Tick(object sender, EventArgs e)
         {
             CalculateChangeDate();
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizeForm_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
