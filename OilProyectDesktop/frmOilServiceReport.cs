@@ -152,9 +152,9 @@ namespace OilProyectDesktop
                     da.Fill(ds);
 
                     //Fill Customer Report with Dataset with rptOilService
-                    rptOilService oilserviceReport = new rptOilService();
-                    oilserviceReport.SetDataSource(ds.Tables[0]);
-                    crvOilService.ReportSource = oilserviceReport;
+                    rptOilServiceByCustomer oilserviceReportByCustomer = new rptOilServiceByCustomer();
+                    oilserviceReportByCustomer.SetDataSource(ds.Tables[0]);
+                    crvOilService.ReportSource = oilserviceReportByCustomer;
                     con.Close();
                 }
 
@@ -180,9 +180,10 @@ namespace OilProyectDesktop
                     da.Fill(ds);
 
                     //Fill Customer Report with Dataset
-                    rptOilService oilserviceReport = new rptOilService();
-                    oilserviceReport.SetDataSource(ds.Tables[0]);
-                    crvOilService.ReportSource = oilserviceReport;
+
+                    rptOilServiceByCustomer oilserviceReportByCustomer = new rptOilServiceByCustomer();
+                    oilserviceReportByCustomer.SetDataSource(ds.Tables[0]);
+                    crvOilService.ReportSource = oilserviceReportByCustomer;
                     con.Close();
                 }
 
@@ -208,9 +209,9 @@ namespace OilProyectDesktop
                     da.Fill(ds);
 
                     //Fill Customer Report with Dataset
-                    rptOilService oilserviceReport = new rptOilService();
-                    oilserviceReport.SetDataSource(ds.Tables[0]);
-                    crvOilService.ReportSource = oilserviceReport;
+                    rptOilServiceByCustomer oilserviceReportByCustomer = new rptOilServiceByCustomer();
+                    oilserviceReportByCustomer.SetDataSource(ds.Tables[0]);
+                    crvOilService.ReportSource = oilserviceReportByCustomer;
                     con.Close();
                 }
 
