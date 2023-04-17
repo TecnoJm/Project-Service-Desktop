@@ -186,7 +186,7 @@ namespace OilProyectDesktop
                     con.Close();
                 }
 
-                if (cbxOptions.SelectedIndex == 3) //DSC/ASC
+                if (cbxOptions.SelectedIndex == 3) //DESC/ASC
                 {
                     //Fitler OilService Table ASC
 

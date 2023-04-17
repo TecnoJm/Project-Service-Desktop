@@ -31,7 +31,9 @@ namespace OilProyectDesktop
             skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
         }
 
-        private void frmCustomerReport_Load(object sender, EventArgs e)
+        //#####################################################################//
+
+        void GetCustomerData()
         {
             SqlConnection con = new SqlConnection(connStr);
             SqlDataAdapter da = new SqlDataAdapter();
@@ -52,6 +54,85 @@ namespace OilProyectDesktop
             customerReport.SetDataSource(ds.Tables[0]);
             crvCustomer.ReportSource = customerReport;
             con.Close();
+        }
+
+        void ApplyFilter()
+        {
+            try
+            {
+                if (cbxOptions.SelectedIndex == 0) //ASC/DSC
+                {
+                    //Fitler Customer Table ASC
+
+                    //Search Customer from OilService table.
+                    SqlConnection con = new SqlConnection(connStr);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    SqlCommand cmd;
+                    DataSet ds = new DataSet();
+
+                    con.Open();
+
+                    cmd = new SqlCommand("spListCustomerASC", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+
+                    da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    //Fill Customer Report with Dataset
+                    rptCustomer customerReport = new rptCustomer();
+                    customerReport.SetDataSource(ds.Tables[0]);
+                    crvCustomer.ReportSource = customerReport;
+                    con.Close();
+                }
+
+                if (cbxOptions.SelectedIndex == 1) //DESC/ASC
+                {
+                    //Fitler Customer Table DESC
+
+                    //Search Customer from OilService table.
+                    SqlConnection con = new SqlConnection(connStr);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    SqlCommand cmd;
+                    DataSet ds = new DataSet();
+
+                    con.Open();
+
+                    cmd = new SqlCommand("spListCustomerDESC", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+
+                    da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    //Fill Customer Report with Dataset
+                    rptCustomer customerReport = new rptCustomer();
+                    customerReport.SetDataSource(ds.Tables[0]);
+                    crvCustomer.ReportSource = customerReport;
+                    con.Close();
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        //#####################################################################//
+
+        private void frmCustomerReport_Load(object sender, EventArgs e)
+        {
+            GetCustomerData();
+        }
+
+        private void cbxOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
         }
     }
 }
