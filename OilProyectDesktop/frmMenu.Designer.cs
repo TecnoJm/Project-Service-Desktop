@@ -41,8 +41,8 @@ namespace OilProyectDesktop
             this.ntiChangeDate = new System.Windows.Forms.NotifyIcon(this.components);
             this.timerChangeDate = new System.Windows.Forms.Timer(this.components);
             this.pnlFormMove = new System.Windows.Forms.Panel();
-            this.btnCloseForm = new System.Windows.Forms.Button();
             this.btnMinimizeForm = new System.Windows.Forms.Button();
+            this.btnCloseForm = new System.Windows.Forms.Button();
             this.pnlMainFrame.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFormMove.SuspendLayout();
@@ -154,21 +154,6 @@ namespace OilProyectDesktop
             this.pnlFormMove.Size = new System.Drawing.Size(1924, 53);
             this.pnlFormMove.TabIndex = 2;
             // 
-            // btnCloseForm
-            // 
-            this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCloseForm.Location = new System.Drawing.Point(1849, 0);
-            this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(75, 53);
-            this.btnCloseForm.TabIndex = 0;
-            this.btnCloseForm.Text = "X";
-            this.btnCloseForm.UseVisualStyleBackColor = true;
-            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
-            // 
             // btnMinimizeForm
             // 
             this.btnMinimizeForm.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -184,6 +169,21 @@ namespace OilProyectDesktop
             this.btnMinimizeForm.Text = "__";
             this.btnMinimizeForm.UseVisualStyleBackColor = true;
             this.btnMinimizeForm.Click += new System.EventHandler(this.btnMinimizeForm_Click);
+            // 
+            // btnCloseForm
+            // 
+            this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCloseForm.Location = new System.Drawing.Point(1849, 0);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(75, 53);
+            this.btnCloseForm.TabIndex = 0;
+            this.btnCloseForm.Text = "X";
+            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
             // frmMenu
             // 

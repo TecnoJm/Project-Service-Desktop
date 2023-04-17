@@ -75,7 +75,7 @@ namespace OilProyectDesktop
                                 ntiChangeDate.Icon = SystemIcons.Application;
                                 ntiChangeDate.BalloonTipTitle = "Claudio AutoService Notification";
                                 ntiChangeDate.BalloonTipText = "The Oil Change for the Plate: " + dt.Rows[i][0] + "\n to date: " + dt.Rows[i][1];
-                                ntiChangeDate.ShowBalloonTip(1000);
+                                ntiChangeDate.ShowBalloonTip(3000);
                             }
                         }
                     }
@@ -86,6 +86,24 @@ namespace OilProyectDesktop
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+            }
+        }
+
+        void CloseMenu()
+        {
+            const string message = "Do you want to exit?";
+            const string caption = "EXIT";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin logIn = new frmLogin();
+                logIn.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+
             }
         }
 
@@ -141,7 +159,7 @@ namespace OilProyectDesktop
 
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CloseMenu();
         }
 
         private void btnMinimizeForm_Click(object sender, EventArgs e)
