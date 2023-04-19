@@ -140,7 +140,7 @@ namespace OilProyectDesktop
             // 
             // timerChangeDate
             // 
-            this.timerChangeDate.Interval = 5000;
+            this.timerChangeDate.Interval = 15000;
             this.timerChangeDate.Tick += new System.EventHandler(this.timerChangeDate_Tick);
             // 
             // pnlFormMove
@@ -218,9 +218,9 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.NotifyIcon ntiChangeDate;
         private System.Windows.Forms.Label lblChangeDate;
-        private System.Windows.Forms.Timer timerChangeDate;
         private System.Windows.Forms.Panel pnlFormMove;
         private System.Windows.Forms.Button btnMinimizeForm;
         private System.Windows.Forms.Button btnCloseForm;
+        private System.Windows.Forms.Timer timerChangeDate;
     }
 }

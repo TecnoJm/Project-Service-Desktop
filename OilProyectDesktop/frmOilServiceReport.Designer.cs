@@ -119,19 +119,19 @@ namespace OilProyectDesktop
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFrom.Location = new System.Drawing.Point(527, 103);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(277, 30);
+            this.dtpFrom.Size = new System.Drawing.Size(277, 26);
             this.dtpFrom.TabIndex = 31;
             this.dtpFrom.Visible = false;
             // 
             // dtpTo
             // 
-            this.dtpTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.Location = new System.Drawing.Point(896, 103);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(277, 30);
+            this.dtpTo.Size = new System.Drawing.Size(277, 26);
             this.dtpTo.TabIndex = 32;
             this.dtpTo.Visible = false;
             // 
