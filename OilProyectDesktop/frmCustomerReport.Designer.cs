@@ -85,6 +85,7 @@ namespace OilProyectDesktop
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Visible = false;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // frmCustomerReport
             // 

@@ -114,6 +114,12 @@
       <DependentUpon>rptCustomer.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptOilServiceBill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOilServiceBill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptOilServiceByCustomer.cs">
       <DependentUpon>rptOilServiceByCustomer.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -159,6 +165,10 @@
     <EmbeddedResource Include="Reports\rptCustomer.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptOilServiceBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOilServiceBill.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptOilServiceByCustomer.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

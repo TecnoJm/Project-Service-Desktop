@@ -71,7 +71,9 @@ namespace OilProyectDesktop
         //Login 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LogIn();
+            //LogIn();
+
+
         }
     }
 }

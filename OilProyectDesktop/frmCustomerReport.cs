@@ -134,5 +134,10 @@ namespace OilProyectDesktop
         {
             ApplyFilter();
         }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
