@@ -1,4 +1,5 @@
 ﻿using System;
+using OilProyectDesktop.Reports;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Collections.Generic;
@@ -281,6 +282,10 @@ namespace OilProyectDesktop
         {
             InsertData();
             ClearTextBox();
+
+            frmReceipt frmReceipt = new frmReceipt();
+            frmReceipt.ShowDialog();
+            this.Close();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -296,7 +301,6 @@ namespace OilProyectDesktop
         private void cbxOilType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalculateDataForOilType();
-            MessageBox.Show(cbxOilType.SelectedItem.ToString());
         }
 
         private void cbxOilGrade_TextChanged(object sender, EventArgs e)

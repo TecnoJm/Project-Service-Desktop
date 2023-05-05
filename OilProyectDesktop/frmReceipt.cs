@@ -14,15 +14,15 @@ using System.Data.SqlClient;
 
 namespace OilProyectDesktop
 {
-    public partial class frmLogin : MaterialForm
+    public partial class frmReceipt : MaterialForm
     {
 
         string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=LocalServiceProjectDB;Integrated Security=True";
 
-        //Create Material Skin Forms options
-        public frmLogin()
+        public frmReceipt()
         {
             InitializeComponent();
+
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
             var skinManager = MaterialSkinManager.Instance;
@@ -31,48 +31,47 @@ namespace OilProyectDesktop
             skinManager.ColorScheme = new ColorScheme(Primary.Red900, Primary.BlueGrey900, Primary.Red900, Accent.Red700, TextShade.WHITE);
         }
 
-        //Void methods
+        //Void Events
         //#####################################################################//
 
-        void LogIn()
+        void CreateReceipt()
         {
-            //Local Variables for SQL Local Connection
-            SqlConnection connection;
-            SqlCommand cmd;
-            SqlDataReader dr;
-
-            connection = new SqlConnection(connStr);
-            cmd = new SqlCommand("spLogIn", connection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@prmUser", txtUser.Text);
-            cmd.Parameters.AddWithValue("@prmPass", txtPassword.Text);
-
-            connection.Open();
-
-            //Check if Datareader found the row.
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                this.Hide();
-                frmMenu newScreen = new frmMenu();
-                newScreen.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o Contraseñas incorrectos.");
-            }
+                //Example Invoice for Consumer Example
+                SqlConnection con = new SqlConnection(connStr);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter();
+                SqlCommand cmd;
+                DataSet ds = new DataSet();
 
-            connection.Close();
+                con.Open();
+
+                cmd = new SqlCommand("spCreateReceipt", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+
+                da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                //Fill Bill with OilService data
+                rptOilServiceBill oilServiceBill = new rptOilServiceBill();
+                oilServiceBill.SetDataSource(ds.Tables[0]);
+                crvReceipt.ReportSource = oilServiceBill;
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         //#####################################################################//
 
-        //Login 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void frmReceipt_Load(object sender, EventArgs e)
         {
-            LogIn();
+            CreateReceipt();
         }
     }
 }
