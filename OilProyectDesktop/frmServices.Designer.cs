@@ -48,6 +48,9 @@ namespace OilProyectDesktop
             this.cbxProducts = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lblMasterID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicesDetail)).BeginInit();
@@ -112,6 +115,7 @@ namespace OilProyectDesktop
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblMasterID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtCarPlate);
@@ -128,6 +132,8 @@ namespace OilProyectDesktop
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtQuantity);
             this.groupBox2.Controls.Add(this.lblTotal);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btnSave);
@@ -186,6 +192,7 @@ namespace OilProyectDesktop
             this.dgvServicesDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServicesDetail.Location = new System.Drawing.Point(20, 149);
             this.dgvServicesDetail.Name = "dgvServicesDetail";
+            this.dgvServicesDetail.ReadOnly = true;
             this.dgvServicesDetail.RowHeadersWidth = 51;
             this.dgvServicesDetail.RowTemplate.Height = 24;
             this.dgvServicesDetail.Size = new System.Drawing.Size(843, 303);
@@ -206,12 +213,13 @@ namespace OilProyectDesktop
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(558, 63);
+            this.label5.Location = new System.Drawing.Point(642, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 29);
             this.label5.TabIndex = 18;
@@ -220,9 +228,9 @@ namespace OilProyectDesktop
             // txtCost
             // 
             this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(563, 98);
+            this.txtCost.Location = new System.Drawing.Point(647, 98);
             this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(210, 28);
+            this.txtCost.Size = new System.Drawing.Size(128, 28);
             this.txtCost.TabIndex = 17;
             // 
             // label3
@@ -262,6 +270,33 @@ namespace OilProyectDesktop
             this.label8.Size = new System.Drawing.Size(86, 29);
             this.label8.TabIndex = 22;
             this.label8.Text = "Notes:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(466, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 29);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Quantity:";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(471, 98);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(128, 28);
+            this.txtQuantity.TabIndex = 25;
+            // 
+            // lblMasterID
+            // 
+            this.lblMasterID.AutoSize = true;
+            this.lblMasterID.Location = new System.Drawing.Point(16, 142);
+            this.lblMasterID.Name = "lblMasterID";
+            this.lblMasterID.Size = new System.Drawing.Size(19, 20);
+            this.lblMasterID.TabIndex = 19;
+            this.lblMasterID.Text = "L";
             // 
             // frmServices
             // 
@@ -306,5 +341,8 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lblMasterID;
     }
 }
