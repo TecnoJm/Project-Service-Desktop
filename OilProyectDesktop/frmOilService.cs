@@ -39,6 +39,7 @@ namespace OilProyectDesktop
         {
             try
             {
+                //Fix the problem in Insert data 
                 SqlConnection con = new SqlConnection(connStr);
                 SqlCommand cmd;
 

@@ -38,9 +38,9 @@ namespace OilProyectDesktop
             this.crvReceipt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvReceipt.Cursor = System.Windows.Forms.Cursors.Default;
             this.crvReceipt.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.crvReceipt.Location = new System.Drawing.Point(0, 63);
+            this.crvReceipt.Location = new System.Drawing.Point(0, 75);
             this.crvReceipt.Name = "crvReceipt";
-            this.crvReceipt.Size = new System.Drawing.Size(1321, 728);
+            this.crvReceipt.Size = new System.Drawing.Size(1321, 716);
             this.crvReceipt.TabIndex = 0;
             // 
             // frmReceipt

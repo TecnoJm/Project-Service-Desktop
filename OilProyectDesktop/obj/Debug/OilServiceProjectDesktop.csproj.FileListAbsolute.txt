@@ -38,3 +38,4 @@ C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\bin\Debug\Crysta
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmCustomerReport.resources
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmOilServiceReport.resources
 C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmReceipt.resources
+C:\Users\JMich\source\repos\OilProyectDesktop\OilProyectDesktop\obj\Debug\OilProyectDesktop.frmServices.resources
