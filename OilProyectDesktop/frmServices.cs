@@ -299,7 +299,13 @@ namespace OilProyectDesktop
             InsertAllData();
             DeleteDetailTemporalData();
             GetDetailTemporalData();
+            txtCarPlate.Text = "";
+            txtCustomerName.Text = "";
+            txtCustomerPhone.Text = "";
             lblTotal.Text = Convert.ToString(0);
+
+            frmReceipt frmReceipt = new frmReceipt();
+            frmReceipt.ShowDialog();
         }
     }
 }
