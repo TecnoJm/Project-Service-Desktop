@@ -66,7 +66,7 @@ namespace OilProyectDesktop.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection {
             get {
                 return this.ReportDefinition.Sections[2];
             }

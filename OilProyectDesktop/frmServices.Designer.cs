@@ -36,7 +36,10 @@ namespace OilProyectDesktop
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCarPlate = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMasterID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -46,11 +49,9 @@ namespace OilProyectDesktop
             this.txtCost = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxProducts = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.lblMasterID = new System.Windows.Forms.Label();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicesDetail)).BeginInit();
@@ -130,8 +131,19 @@ namespace OilProyectDesktop
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Data:";
             // 
+            // lblMasterID
+            // 
+            this.lblMasterID.AutoSize = true;
+            this.lblMasterID.Location = new System.Drawing.Point(16, 142);
+            this.lblMasterID.Name = "lblMasterID";
+            this.lblMasterID.Size = new System.Drawing.Size(19, 20);
+            this.lblMasterID.TabIndex = 19;
+            this.lblMasterID.Text = "L";
+            this.lblMasterID.Visible = false;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtQuantity);
             this.groupBox2.Controls.Add(this.lblTotal);
@@ -151,6 +163,24 @@ namespace OilProyectDesktop
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Services Data";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(466, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 29);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Quantity:";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(471, 98);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(128, 28);
+            this.txtQuantity.TabIndex = 25;
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -159,7 +189,7 @@ namespace OilProyectDesktop
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(27, 29);
             this.lblTotal.TabIndex = 24;
-            this.lblTotal.Text = "L";
+            this.lblTotal.Text = "0";
             // 
             // label6
             // 
@@ -186,6 +216,7 @@ namespace OilProyectDesktop
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dgvServicesDetail
             // 
@@ -252,14 +283,14 @@ namespace OilProyectDesktop
             this.cbxProducts.Size = new System.Drawing.Size(384, 30);
             this.cbxProducts.TabIndex = 0;
             // 
-            // richTextBox1
+            // rtbNotes
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(923, 97);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(347, 647);
-            this.richTextBox1.TabIndex = 21;
-            this.richTextBox1.Text = "";
+            this.rtbNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbNotes.Location = new System.Drawing.Point(923, 97);
+            this.rtbNotes.Name = "rtbNotes";
+            this.rtbNotes.Size = new System.Drawing.Size(347, 647);
+            this.rtbNotes.TabIndex = 21;
+            this.rtbNotes.Text = "-";
             // 
             // label8
             // 
@@ -271,32 +302,22 @@ namespace OilProyectDesktop
             this.label8.TabIndex = 22;
             this.label8.Text = "Notes:";
             // 
-            // label7
+            // btnDelete
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(466, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 29);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Quantity:";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(471, 98);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(128, 28);
-            this.txtQuantity.TabIndex = 25;
-            // 
-            // lblMasterID
-            // 
-            this.lblMasterID.AutoSize = true;
-            this.lblMasterID.Location = new System.Drawing.Point(16, 142);
-            this.lblMasterID.Name = "lblMasterID";
-            this.lblMasterID.Size = new System.Drawing.Size(19, 20);
-            this.lblMasterID.TabIndex = 19;
-            this.lblMasterID.Text = "L";
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(96, 488);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = true;
+            this.btnDelete.Size = new System.Drawing.Size(117, 36);
+            this.btnDelete.TabIndex = 27;
+            this.btnDelete.Text = "Clear grid";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmServices
             // 
@@ -304,7 +325,7 @@ namespace OilProyectDesktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 849);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbNotes);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmServices";
@@ -339,10 +360,11 @@ namespace OilProyectDesktop
         private System.Windows.Forms.Label label6;
         private MaterialSkin.Controls.MaterialRaisedButton btnSave;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbNotes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label lblMasterID;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
     }
 }
