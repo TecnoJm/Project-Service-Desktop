@@ -139,6 +139,7 @@ namespace OilProyectDesktop
             this.lblMasterID.Size = new System.Drawing.Size(19, 20);
             this.lblMasterID.TabIndex = 19;
             this.lblMasterID.Text = "L";
+            this.lblMasterID.Visible = false;
             // 
             // groupBox2
             // 

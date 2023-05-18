@@ -56,9 +56,9 @@ namespace OilProyectDesktop
                 da.Fill(ds);
 
                 //Fill Bill with OilService data
-                rptOilServiceBill oilServiceBill = new rptOilServiceBill();
-                oilServiceBill.SetDataSource(ds.Tables[0]);
-                crvReceipt.ReportSource = oilServiceBill;
+                rptServicesReceipt servicesReceipt = new rptServicesReceipt();
+                servicesReceipt.SetDataSource(ds.Tables[0]);
+                crvReceipt.ReportSource = servicesReceipt;
                 con.Close();
             }
             catch (Exception)
