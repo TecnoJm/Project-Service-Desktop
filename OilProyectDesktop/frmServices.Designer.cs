@@ -38,6 +38,7 @@ namespace OilProyectDesktop
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMasterID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label7 = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace OilProyectDesktop
             this.cbxProducts = new System.Windows.Forms.ComboBox();
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicesDetail)).BeginInit();
@@ -139,7 +139,6 @@ namespace OilProyectDesktop
             this.lblMasterID.Size = new System.Drawing.Size(19, 20);
             this.lblMasterID.TabIndex = 19;
             this.lblMasterID.Text = "L";
-            this.lblMasterID.Visible = false;
             // 
             // groupBox2
             // 
@@ -162,6 +161,23 @@ namespace OilProyectDesktop
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Services Data";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(96, 488);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = true;
+            this.btnDelete.Size = new System.Drawing.Size(117, 36);
+            this.btnDelete.TabIndex = 27;
+            this.btnDelete.Text = "Clear grid";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label7
             // 
@@ -301,23 +317,6 @@ namespace OilProyectDesktop
             this.label8.Size = new System.Drawing.Size(86, 29);
             this.label8.TabIndex = 22;
             this.label8.Text = "Notes:";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoSize = true;
-            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Depth = 0;
-            this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(96, 488);
-            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Primary = true;
-            this.btnDelete.Size = new System.Drawing.Size(117, 36);
-            this.btnDelete.TabIndex = 27;
-            this.btnDelete.Text = "Clear grid";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmServices
             // 

@@ -34,7 +34,7 @@ namespace OilProyectDesktop
         //Void Events
         //#####################################################################//
 
-        void GetDetailData()
+        void GetDetailTemporalData()
         {
             //Fill dgvServicesDetail Datatable
             SqlConnection con = new SqlConnection(connStr);
@@ -92,6 +92,27 @@ namespace OilProyectDesktop
             {  }
         }
 
+        void DeleteDetailTemporalData()
+        {
+            //Fill dgvServicesDetail Datatable
+            SqlConnection con = new SqlConnection(connStr);
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd;
+            DataTable dt = new DataTable();
+
+            con.Open();
+
+            //Simple SQL Query that not procedure required.
+            cmd = new SqlCommand("Delete from ServicesDetailTemporal", con);
+            cmd.ExecuteNonQuery();
+
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvServicesDetail.DataSource = dt;
+
+            con.Close();
+        }
+
         void CalculateSubtotalServices()
         {
             //Calculate the Subtotal of products from Products datagridview
@@ -104,27 +125,6 @@ namespace OilProyectDesktop
             }
 
             lblTotal.Text = Convert.ToString(subtotal);
-        }
-
-        void DeleteDetailTemporalData()
-        {
-            //Fill dgvServicesDetail Datatable
-            SqlConnection con = new SqlConnection(connStr);
-            SqlDataAdapter da = new SqlDataAdapter();
-            SqlCommand cmd;
-            DataTable dt = new DataTable();
-
-            con.Open();
-
-            //Simple SQL Query that not procedure required.
-            cmd = new SqlCommand("Delete from ServicesDetailTemporal", con);        
-            cmd.ExecuteNonQuery();
-
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgvServicesDetail.DataSource = dt;
-
-            con.Close();
         }
 
         void InsertAllData()
@@ -219,7 +219,7 @@ namespace OilProyectDesktop
                 conn.Open();
 
                 //Simple SQL Query that not procedure required.
-                cmd = new SqlCommand("Select TOP 1 ID from dbo.ServicesMaster", conn);
+                cmd = new SqlCommand("Select * from dbo.ServicesMaster order by ID DESC", conn);
                 cmd.ExecuteNonQuery();
                 da.SelectCommand = cmd;
                 da.Fill(dt);
@@ -270,7 +270,7 @@ namespace OilProyectDesktop
         private void frmServices_Load(object sender, EventArgs e)
         {
             DeleteDetailTemporalData();
-            GetDetailData();
+            GetDetailTemporalData();
             FillcbxProducts();
             SearchServicesMasterID();
         }
@@ -283,14 +283,14 @@ namespace OilProyectDesktop
         private void btnAdd_Click(object sender, EventArgs e)
         {
             InsertServicesDetailTemporalData();
-            GetDetailData();
+            GetDetailTemporalData();
             CalculateSubtotalServices();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteDetailTemporalData();
-            GetDetailData();
+            GetDetailTemporalData();
             lblTotal.Text = Convert.ToString(0);
         }
 
@@ -298,6 +298,7 @@ namespace OilProyectDesktop
         {
             InsertAllData();
             DeleteDetailTemporalData();
+            GetDetailTemporalData();
             lblTotal.Text = Convert.ToString(0);
         }
     }
